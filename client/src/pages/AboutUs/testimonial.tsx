@@ -1,9 +1,37 @@
-import farmer from "../../assets/farmer.png";
-const Testimonial = () => {
+import React, { useState } from "react";
+import { testimonials } from "./data";
+import arrowBack from "../../assets/arrowback.png";
+import arrowFront from "../../assets/arrowfront.png";
+
+const TestimonialSlider: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const {
+    title,
+    challenge,
+    solution,
+    outcome,
+    patientName,
+    patientProfile,
+    image,
+  } = testimonials[currentIndex];
+
   return (
     <div>
       <section className="px-16 py-[4rem]">
-        <div >
+        <div>
           <p className="text-[16px] font-semibold text-center leading-[24px] text-bluePrimary">
             Testimonial
           </p>
@@ -11,11 +39,13 @@ const Testimonial = () => {
             Don’t just take our word for it
           </p>
         </div>
+
         <div className="flex flex-row mt-12 justify-center items-center">
           <div className="flex-1">
+            <div className="h-[25rem]">
             <div>
-              <p className="text-[30px] font-semibold leading-[60px] tracking-[-0.02em] text-greyDark">
-                Optimizing Diabetes Care in Rural Nigeria
+              <p className="text-[30px] font-semibold tracking-[-0.02em] text-greyDark">
+                {title}
               </p>
             </div>
             <div className="mt-8">
@@ -23,43 +53,45 @@ const Testimonial = () => {
                 Challenge
               </p>
               <p className="text-[15px] font-normal leading-[30px] text-greyPrimary">
-                Limited access to healthcare facilities and difficulty in
-                monitoring blood sugar levels.
+                {challenge}
               </p>
             </div>
-            <div>
+            <div className="mt-4">
               <p className="text-[16px] font-semibold text-left leading-[28px] font-inter text-greyDark">
                 Solution
               </p>
               <p className="text-[15px] font-normal leading-[30px] text-greyPrimary">
-                ChronoAid AI's remote monitoring and AI-powered alerts provide
-                real-time updates to the local clinic, allowing healthcare
-                workers to intervene promptly.
+                {solution}
               </p>
             </div>
-            <div>
+            <div className="mt-4">
               <p className="text-[16px] font-semibold text-left leading-[28px] font-inter text-greyDark">
                 Outcome
               </p>
               <p className="text-[15px] font-normal leading-[30px] text-greyPrimary">
-                Improved glycemic control and reduced hospital visits, resulting
-                in enhanced quality of life and reduced healthcare costs.
+                {outcome}
               </p>
             </div>
-            <div>
-              <img src="" alt="" />
-              <div>
+            </div>
+            <div className="mt-4 flex items-center">
+              <div className="w-[60%]">
                 <p className="text-[18px] font-semibold text-left leading-[28px] font-inter text-greyDark">
-                  Ahmed
+                  {patientName}
                 </p>
                 <p className="text-[15px] font-normal leading-[30px] text-greyPrimary">
-                  A 45-year-old farmer in rural Northern Nigeria with diabetes.{" "}
+                  {patientProfile}
                 </p>
+              </div>
+              <div onClick={handlePrev}>
+                <img src={arrowBack} className="mr-4" />
+              </div>
+              <div onClick={handleNext}>
+                <img src={arrowFront} className="mr-4" />
               </div>
             </div>
           </div>
           <div className="flex-1">
-            <img src={farmer} alt="A Farmer" className="" />
+            <img src={image} alt={patientName} className="mr-4" />
           </div>
         </div>
       </section>
@@ -67,4 +99,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default TestimonialSlider;

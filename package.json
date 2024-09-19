@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@splidejs/react-splide": "^0.7.12"
+  }
+}
