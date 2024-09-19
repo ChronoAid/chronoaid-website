@@ -10,7 +10,7 @@ const WhoWeServe = () => {
     <div>
       <section className="my-[4rem]">
         <div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1 p-8">
               <div>
                 <p className="text-greyDark text-[24px] font-semibold text-left leading-[38px] font-inter">
@@ -32,7 +32,7 @@ const WhoWeServe = () => {
               <img src={imageA} alt="" />
             </div>
           </div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1">
               <img src={imageB} alt="" />
             </div>
@@ -54,7 +54,7 @@ const WhoWeServe = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1 p-8">
               <div>
                 <p className="text-greyDark text-[24px] font-semibold text-left leading-[38px] font-inter">
@@ -76,7 +76,7 @@ const WhoWeServe = () => {
               <img src={imageC} alt="" />
             </div>
           </div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1">
               <img src={imageD} alt="" />
             </div>
@@ -98,7 +98,7 @@ const WhoWeServe = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1 p-8">
               <div>
                 <p className="text-greyDark text-[24px] font-semibold text-left leading-[38px] font-inter">
@@ -120,7 +120,7 @@ const WhoWeServe = () => {
               <img src={ImageE} alt="" />
             </div>
           </div>
-          <div className="flex flex-row items-center my-12">
+          <div className="flex flex-row items-center my-12 justify-between">
             <div className="flex-1">
               <img src={imageF} alt="" />
             </div>
